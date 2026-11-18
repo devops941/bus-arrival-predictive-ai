@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #F6F8FB;
+    --surface: #FFFFFF;
+    --bg-subtle: #EDF1F7;
+    --border: #DCE3EE;
+    --text-primary: #0F1E33;
+    --text-secondary: #4A5C75;
+    --text-muted: #7C8CA3;
+    --primary: #1D4ED8;
+    --primary-hover: #1E40AF;
+    --primary-soft: #DBEAFE;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Focus ring style following Section 9 */
+  *:focus-visible {
+    outline: 2px solid #1D4ED8;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom scrollbar for modern light theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDF1F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Tabular numbers for accurate alignment */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # MongoDB Atlas / Local Service
+  mongodb:
+    image: mongo:6.0
+    container_name: busarrival_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: busarrival
+    volumes:
+      - mongo_data:/data/db
+
+  # Backend REST API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: busarrival_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8000
+      - MONGODB_URI=mongodb://mongodb:27017/?retryWrites=true&w=majority
+      - MONGODB_DB_NAME=busarrival
+      - JWT_SECRET=change-me-to-a-long-random-string
+    depends_on:
+      - mongodb
+
+  # Frontend React Application
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: busarrival_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

@@ -1,0 +1,5 @@
+stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
+ST-101,ST-101,North Station Platform A,28.6200,77.2100,0
+ST-102,ST-102,Tech Park Central Terminal,28.6350,77.2250,0
+ST-103,ST-103,Civic Center Plaza,28.6100,77.2050,0
+ST-104,ST-104,Airport Terminal Gate 3,28.5550,77.0850,0

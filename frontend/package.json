@@ -1,0 +1,42 @@
+{
+  "name": "busarrival-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "patch:rollup": "node -e \"const fs=require('fs'),p='node_modules/rollup/dist/native.js';if(fs.existsSync(p)){let c=fs.readFileSync(p,'utf8');if(!c.includes('@rollup/wasm-node')){c=c.replace('const nativeModule = requireWithFriendlyError','let nativeModule; try { nativeModule = requireWithFriendlyError');c=c.replace('@rollup/rollup-${packageBase}\\n);','@rollup/rollup-${packageBase}\\n); } catch(e) { nativeModule = require(\\'@rollup/wasm-node/dist/native.js\\'); }');fs.writeFileSync(p,c);}}\""
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@tanstack/react-query": "^5.59.0",
+    "@tanstack/react-table": "^8.20.5",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.0",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.453.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
+    "react-router-dom": "^6.27.0",
+    "recharts": "^2.13.0",
+    "sonner": "^1.5.0",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.68.5",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
+  }
+}

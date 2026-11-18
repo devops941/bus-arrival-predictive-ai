@@ -1,0 +1,4 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+R-201,AGY,201,North Station - Tech Park Express,3,1D4ED8,FFFFFF
+R-202,AGY,202,South Terminal - Civic Center Local,3,0D9488,FFFFFF
+R-203,AGY,203,Airport Shuttle - Grand Interchange,3,7C3AED,FFFFFF

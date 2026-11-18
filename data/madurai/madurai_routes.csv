@@ -1,0 +1,5 @@
+route_no,name,origin,destination,total_distance_km,scheduled_headway_min,active
+77A,Periyar to Othakadai High Court,Periyar Bus Stand,Othakadai High Court Bench,15.8,10,True
+88,Periyar to Madurai Airport,Periyar Bus Stand,Madurai International Airport,14.2,15,True
+48P,Periyar to Samayanallur,Periyar Bus Stand,Samayanallur,13.6,12,True
+700,Mattuthavani to Thiruparankundram,Mattuthavani MGR Bus Stand,Thiruparankundram Temple,15.5,15,True
